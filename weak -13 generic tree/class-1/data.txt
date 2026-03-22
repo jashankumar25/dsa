@@ -1,0 +1,87 @@
+🌳 Uses of Trees in Real Life
+1️⃣ DNS Resolution
+
+Example:
+When you type www.google.com, how does the system find the IP?
+It uses a hierarchical tree structure.
+Structure looks like:
+        .
+       / \
+     com  org
+      |
+   google
+      |
+     www
+🔹 Real Example:
+The Domain Name System (DNS) works like a tree.
+How it works:
+Root server
+Top Level Domain (TLD) server → .com
+Authoritative server → google.com
+Subdomain → www
+Each level is like a parent-child relationship.
+👉 That is exactly a Tree Data Structure.
+
+2️⃣ Network Routing
+Routers use trees to find optimal paths.
+🔹 Example:
+In computer networks, routing protocols build a spanning tree to avoid loops.
+Real Protocol:
+The Spanning Tree Protocol (STP) is used in switches.
+Why Tree?
+No cycles
+One unique path between nodes
+Efficient routing
+
+3️⃣ File System
+Your computer folder system is a tree.
+Example:
+C:
+ ├── Users
+ │    ├── Jashan
+ │         ├── Documents
+ │         ├── Downloads
+Each folder = node
+Subfolder = child node
+Windows, Linux, Mac — all use tree structure.
+
+4️⃣ Database Indexing
+Databases use special trees like:
+Binary Search Tree
+B-Tree
+B+ Tree
+Example:
+MySQL indexing
+Searching data fast
+Tree makes searching O(log n) instead of O(n).
+
+5️⃣ Expression Trees
+Used in:
+Compilers
+Calculators
+Programming language parsing
+Example:
+Expression: 3 + 5 * 2
+Tree:
+
+       +
+      / \
+     3   *
+        / \
+       5   2
+6️⃣ HTML DOM
+Web pages use a DOM tree.
+Example:
+<html>
+  <body>
+    <h1>Hello</h1>
+  </body>
+</html>
+This is stored as a tree internally.
+
+7️⃣ Artificial Intelligence
+
+Used in:
+Decision Trees
+Game Trees (like Chess)
+Machine Learning models
