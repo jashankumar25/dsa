@@ -1,0 +1,46 @@
+1.You cannot use complex expressions or function calls in case labels. 
+Only constant expressions are allowed
+switch(x)(
+caso sqrt(4) 
+Error: function call not allowed in case
+break,
+)
+2.You cannot use floating-point constants in case tabels, 
+even if the switch expression is an integer.
+
+switch(x) { case 3.14; 
+//Error case label does not evaluate to an integer
+....
+}
+
+3. The case labels must be constant expressions that can be evaluated at compile time. 
+Variables or non- constant expressions are not allowed..
+int n=2;
+switch(x) { case n ;
+//Error: n is not a constant expression
+...
+}
+4. You cannot declare variables directly within a case without 
+enclosing the code block in braces Otherwise, it causes a fall-through into the next case
+switch(x) {
+case 1.
+int y = 5; // Error: declaration requires braces
+break;
+case 2:
+...
+}
+
+// Corrected with braces:
+
+switch(x) {
+case 1: {
+
+int y = 5;
+
+break;
+
+}
+
+case 2
+//----
+}
