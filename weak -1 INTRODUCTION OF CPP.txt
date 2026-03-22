@@ -1,0 +1,1131 @@
+-------------------------------( DSA – SUPREME)-----------------------========================================================================
+                        
+                       CODE-WEAK-0,1 [INTRODUCTION OF C++]
+
+------------------------------------------------------------------------
+----------------------------FIRST PROGRAM FILE---------------------------------------------------------------------------------------------------
+1. #include<iostream>
+using namespace std;
+int main() {
+ cout<<"Namaste Dunia"<<endl;   //endl-new line  
+ cout<<"jashan here!!";
+ return 0;   
+}
+2.
+#include<iostream>
+using namespace std;
+int main() {
+ cout<<"Namaste Dunia"<<endl;  
+ //endl-new line  can be use as instead of "\n"
+ cout<<"jashan here!!";
+ cout<<"\n";
+ cout<<"--hello guys--";
+ return 0;   
+}
+-------------------------------------------------------------------------
+------------------------------VARIABLES AND DATATYPES---------------------------------------------------------------------------------------------
+
+1.variable.define
+#include <iostream>
+using namespace std;
+int main()
+{
+    // variable define --- comment 
+    int age=25;
+    cout<<"My age (jashan) is:"<<age<<endl;
+    return 0;
+}
+2.var.declaration..
+#include <iostream>
+using namespace std;
+int main()
+{
+    // declartion define 
+    int ag;
+    cout<<"My age is:"<<ag<<endl;// random val-4201179
+    // definition define 
+    int age=78;
+    cout<<"age---"<<age<<endl;
+    //manipulation or updation
+    age=102;
+    cout<<"age--updation--"<<age<<endl;
+    return 0;
+}
+3.categorization of datatypes
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    // int datatype 
+    int count = 5;
+    // float datatype
+    float share = 3.14;
+    // char datatype
+    char alphabet = 'z';// -single quotes me hogi val
+    // double data type
+    double weight = 55.56829;
+    // bool datatype
+    bool ismale = true;
+    bool ischile = 1; // acts as true
+    bool isfalse = 0; // acts as false
+
+    cout << count << endl;
+    cout << share << endl;
+    cout << alphabet << endl;
+    cout << weight << endl;
+    cout << ismale << endl;
+    //cout << ischile << endl;
+    //cout << isfalse << endl;
+
+    // Use of sizeof function
+    int age = 12;
+    cout << sizeof(age) << endl; // Fixed the error
+    int jashan=9;
+     {
+         int jashan1=90;
+         cout<<jashan1<<endl;
+     }
+     cout<<jashan;
+
+    return 0;
+}
+------------------------------------------------------------------------
+------------------------------USER INPUT IN C++---------------------------------------------------------------------------------------------------
+1. #include<iostream>
+using namespace std;
+int main()
+{
+    //variable declare
+    int marks;
+    cout<<"enter your marks:--";
+    // input le rhe ha yha pr
+    cin>>marks;
+    cout<<"JASHAN'S marks--"<<marks<<endl;
+     
+     //-----float le kiya kaam -----------
+    float markss;
+    cout<<"enter your marks in float number :--";
+    // input le rhe ha yha pr
+    cin>>markss;
+    cout<<"JASHAN'S marks--"<<markss<<endl; 
+   
+     //-double ke ley-
+     double marksss;
+    cout<<"enter your marks in double:--";
+    // input le rhe ha yha pr
+    cin>>marksss;
+    cout<<"JASHAN'S marks--"<<marksss<<endl;
+
+    //-char ke ley
+    char mar;
+    cout<<"enter your marks in char :--";
+    // input le rhe ha yha pr
+    cin>>mar;
+    cout<<"JASHAN'S marks--"<<mar<<endl;
+
+    //-bool -input as 0 and 1 form (not true or false)
+    bool mars;
+    cout<<"enter your marks in bool :--";
+    // input le rhe ha yha pr
+    cin>>mars;
+    cout<<"JASHAN'S marks--"<<mars<<endl;
+    return 0 ;
+}
+Output-enter your marks:--78
+JASHAN'S marks--78
+enter your marks in float number :--89.65
+JASHAN'S marks—89.65
+enter your marks in double:--96.7855
+JASHAN'S marks—96.7855
+enter your marks in char :--p
+JASHAN'S marks--p
+enter your marks in bool :--0
+JASHAN'S marks—0
+-------------------------------------------------------------------------
+----------------------------- CONTROL FLOW STATEMENT----------------------------------------------------------------------------------------------
+1.if,if -else statement.
+#include <iostream>
+using namespace std;
+int main()
+{
+     int budget;
+     cout<<"enter your budget :";
+     //-input
+     cin>>budget;
+
+     if(budget > 200000)
+     {
+        cout<<"u can buy scorpio";
+     }
+     else
+     {
+        cout<<"u canot buy scorpio";
+     }
+
+     int age;
+     cout<<"\nenter your age :";
+     //-input
+     cin>>age;
+     if(age>18)
+     {
+      cout<<"u can vote"<<endl;
+     }
+     else
+     {
+      cout<<"u cannot vote"<<endl;
+     }
+   
+
+    return 0;
+}
+Output-
+enter your budget :45
+u canot buy scorpio
+enter your age :85
+u can vote
+
+
+2.if-else-if,if-else-if-else  STATEMENT
+#include <iostream>
+using namespace std;
+int main()
+{
+     int marks;
+     cout<<"enter your marks :";
+     //-input
+     cin>>marks;
+
+     if(marks >90)
+     {
+        cout<<"YOUR GRADE IS-A";
+     }
+     else if(marks>80)
+     {
+        cout<<"YOUR GRADE IS-B ";
+     }
+     else if(marks > 70)
+     {
+        cout<<"YOUR GRADE IS-C";
+     }
+     else if(marks>60)
+     {
+        cout<<"YOUR GRADE IS-D ";
+     }
+     else{
+        cout<<" u are failed";
+     }
+    return 0;
+}
+OUTPUT-enter your marks :65
+YOUR GRADE IS-D
+
+3.NESTED IF STATEMENT
+#include <iostream>
+using namespace std;
+int main()
+{
+     int height ;
+     cout<<"enter your  height :";
+     //-input
+     cin>>height;
+
+     int weight ;
+     cout<<"enter your  weight :";
+     //-input
+     cin>>weight;
+
+     if(height > 5)
+     { 
+        if(weight > 70)
+        {
+           cout<<" u are a good BMI";
+        }
+        else{
+            cout<<"weight kaam hi ha ";
+        }
+     }
+     else {
+        cout<<"complan pilaa do"<<endl;
+     }
+
+    return 0;
+}
+Output-
+enter your  height :6
+enter your  weight :89
+ u are a good BMI
+-------------------------------------------------------------------------
+----------------------------- SWITCH STATEMENT----------------------------------------------------------------------------------------------------
+1.  ------------------if else uses instead of switch
+#include <iostream>
+using namespace std;
+int main()
+{
+     char grade ;
+     cout<<"enter your  grade :";
+     //-input
+     cin>>grade;
+     
+    if(grade =='A')// comparsion 
+    {
+       cout<<"your marks will be range of 90 and 100"<<endl;
+    }
+    else if(grade =='B'){
+        cout<<"your marks will be range of 80 and 90"<<endl;
+    }
+    else if(grade =='C') 
+    {
+       cout<<"your marks will be range of 70 and 80"<<endl;
+    }
+    else if(grade =='D') 
+    {
+        cout<<"your marks will be range of 60 and 70"<<endl;
+    }
+    else{
+     cout<<"your marks will be range of 0 and 60"<<endl;   
+    }
+ 
+    return 0;
+}
+2.SWITCH CASE 
+#include <iostream>
+using namespace std;
+int main()
+{
+     char grade ;
+     cout<<"enter your  grade (A,B,C,D, OTHER ):";
+     //-input
+     cin>>grade;
+     
+    switch (grade)
+    {
+    case 'A':
+    cout<<"your marks will be range of 90 and 100"<<endl;
+    break;
+    case 'B':
+    cout<<"your marks will be range of 80 and 90"<<endl;
+    break;
+    case 'C':
+    cout<<"your marks will be range of 70 and 80"<<endl;
+    break;
+    case 'D':
+    cout<<"your marks will be range of 60 and 70"<<endl;
+    break;
+    default:
+    cout<<"your marks will be range of 0 and 60"<<endl;   
+    break;
+    }
+    return 0;
+}
+3. IMP POINTS-- 
+1.You cannot use complex expressions or function calls in case labels. 
+Only constant expressions are allowed
+switch(x)(
+caso sqrt(4) 
+Error: function call not allowed in case
+break,
+)
+2.You cannot use floating-point constants in case tabels, 
+even if the switch expression is an integer.
+
+switch(x) { case 3.14; 
+//Error case label does not evaluate to an integer
+....
+}
+
+3. The case labels must be constant expressions that can be evaluated at compile time. 
+Variables or non- constant expressions are not allowed..
+int n=2;
+switch(x) { case n ;
+//Error: n is not a constant expression
+...
+}
+4. You cannot declare variables directly within a case without 
+enclosing the code block in braces Otherwise, it causes a fall-through into the next case
+switch(x) {
+case 1.
+int y = 5; // Error: declaration requires braces
+break;
+case 2:
+...
+}
+
+// Corrected with braces:
+
+switch(x) {
+case 1: {
+
+int y = 5;
+
+break;
+
+}
+
+case 2
+//----
+}.
+-------------------------------------------------------------------------
+----------------------------- TERNARY OPERATOR ---------------------------------------------------------------------------------------------------
+
+1. #include <iostream>
+using namespace std;
+int main()
+{
+     int age=9 ;
+     
+     (age>18) ?cout<<"can vote":cout<<"canot vote";
+     int x=10;
+     int y=29;
+
+     int result=x>y?x:y;
+     cout<<"\nthe larger value:"<<result<<endl;
+
+     
+    
+    return 0;
+}
+o/p-canot vote
+the larger value:29
+-------------------------------------------------------------------------
+--------------------------- FOR ,WHILE,DO-WHILE LOOP ---------------------------------------------------------------------------------------------
+1.for -loop
+ #include <iostream>
+using namespace std;
+int main()
+{
+     // for loop-
+     for(int count=1;count<10;count=count+1)
+     {
+        cout<<"JASHAN here"<<endl;
+     }
+     // counting from  to 10
+     for(int i=1;i<=10;i=i+1) 
+     {
+        cout<<i<<" ";
+     }
+     cout<<"\ncounting from  51 to 69\n";
+     for(int i=51;i<70;i=i+1 ) //for(int i=51;i<=69;i=i+1 )
+     {
+        cout<<i<<" ";
+     }
+     cout<<"\n break keyword\n";
+     for(int i=1;i<=10;i++ ) 
+     {  
+        cout<<i<<" ";
+        if(i==5)
+        {
+            break;
+        }
+        
+     }
+     cout<<"\n break keyword\n";
+     for(int i=1;i<=10;i++ ) 
+     {  
+        
+        if(i==5)
+        {
+            break;
+        }
+        cout<<i<<" ";
+     }
+     cout<<"\n continue keyword\n";
+     for(int i=1;i<=5;i++ ) 
+     {  
+        
+        if(i==3)
+        {
+            continue;
+        }
+        cout<<i<<" ";
+     }
+     
+     
+    return 0;
+}
+o/p-JASHAN here
+JASHAN here
+JASHAN here
+JASHAN here
+JASHAN here
+JASHAN here
+JASHAN here
+JASHAN here
+JASHAN here
+1 2 3 4 5 6 7 8 9 10
+counting from  51 to 69
+51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69
+ 
+break keyword
+1 2 3 4 5
+ break keyword
+1 2 3 4
+ continue keyword
+1 2 4 5
+
+2.while -loop
+#include <iostream>
+using namespace std;
+int main()
+{
+     // while loop-
+     int i=1;
+     while (i<=5)
+     {
+        cout<<i<<" ";
+        i=i+1;
+    }
+     cout<<endl;
+     for(int count=1;count<=5;count=count+1)
+     {
+        cout<<count<<" ";
+     }
+    return 0;
+}
+3.homework-
+#include <iostream>
+using namespace std;
+int main()
+{
+ 
+     cout<<"1.print number 1-to -100\n";
+     for(int i=1;i<=100;i=i+1)
+     {
+        cout<<i<<" ";
+     }
+     cout<<"\n2.print number 100 -t0-1\n";
+     for(int i=100;i>=1;i=i-1)
+     {
+        cout<<i<<" ";
+     }
+     cout<<"\n3.print name 50 times \n";
+     //for(int i=100;i>=50;i=i-1) or 
+     for(int i=1;i<=50;i++)
+     {
+        cout<<" jashan"<<"";
+     }
+     cout<<"\n4..print number 0 -t0-10\n";
+     for(int j=0;j>=-10;j=j-1)
+     {
+        cout<<j<<" ";
+     }
+     cout<<"\n5..print  7 ka table \n";
+     for(int i=1;i<=10;i=i+1)
+     {
+        cout<<i*7<<" ";
+     }
+     cout<<"\n6.print captical aplnabet-a to z-";
+     for(char ch='A';ch<='Z';ch=ch+1)
+     {
+        cout<<ch<<" ";
+     }
+     cout<<"\n7..print small aplnabet-a to z-";
+     for(char ch='a';ch<='z';ch=ch+1)
+     {
+        cout<<ch<<" ";
+     }
+
+    return 0;
+}
+-------------------------------------------------------------------------
+---------------------------DO -WHILE ,NESTED LOOPS -----------------------------------------------------------------------------------------------
+1.do -while 
+#include <iostream>
+using namespace std;
+int main()
+{
+     // for loop 
+     for(int i=1;i<=10;i=i+1)
+     {
+        cout<<i<<" ";
+     }
+     cout<<endl;
+
+     int i=1;
+     do{//logic
+        cout<<i<<" ";
+        //-updation 
+        i=i+1;
+     } while(i<=5);
+     
+     //-20 times print name'
+      int j=1;
+     do{
+         cout<<" jashan"<<" ";
+         j=j+1;
+     } while(j<=20);
+     
+     
+
+    return 0;
+}
+2.nested loop
+#include <iostream>
+using namespace std;
+int main()
+{
+     // for loop nested loop-
+     for(int i=1;i<=3;i=i+1)
+     {
+        for(int j=1;j<=3;j++)
+        {
+           // cout<<"THE Val of i:"<<i<<"and val of j:"<<j<<endl;
+           cout<<i<<j<<" ";
+        }
+        cout<<endl;
+     }
+     //
+     for(int i=1;i<=2;i=i+1)
+     {
+        for(int j=1;j<=2;j++)
+        {
+           cout<<i*j<<" ";
+        }
+        cout<<endl;
+     }
+
+    
+    return 0;
+}
+o/p-
+11 12 13 
+21 22 23
+31 32 33
+1 2
+2 4
+-------------------------------------------------------------------------
+----------------------------OPEATORS IN C++--------- ---------------------------------------------------------------------------------------------
+1. unary op
+#include <iostream>
+using namespace std;
+int main()
+    {int a=5 ;
+     cout<<a<<endl;;
+     cout<<++a<<endl;
+     // a ki value 6 ho chuki hai
+     cout<<(a++)<<endl;
+     // print kara toh 6 hi print hogi ,but a ki val- 7 ho chuki hai
+      cout<<a<<endl;
+      //yaha ki val-7 ban chuki hai
+      cout<<(--a)<<endl;
+      // a ki val-6 ban chuki hai
+     cout<<(a--)<<endl;;
+     // print kara toh 6 hi print hogi,but a ki val- 5 ho chuki hai
+     cout<<a;
+    return 0;
+}
+o/p-5
+6
+6
+7
+6
+6
+5
+2.arithmetic op 
+#include <iostream>
+using namespace std;
+int main()
+{
+    // arithmetic opertors.
+    int a=10 ;
+    int b=5;
+    cout<<(a+b)<<endl;
+    cout<<(a-b)<<endl;
+    cout<<(a*b)<<endl;
+    cout<<(a/b)<<endl;
+    cout<<(a%b)<<endl;// gives us remainder ..
+    cout<<(5.0/2)<<endl;//-2.5
+    cout<<(5/2)<<endl;//-2
+    cout<<(5*1.0/2)<<endl;//-2.5
+    return 0;
+}
+3.relational op
+#include <iostream>
+using namespace std;
+int main()
+{
+    //relational opertors.
+    int a=10 ;
+    int b=5;
+    cout<<(a>b)<<endl; //1
+    cout<<(a<b)<<endl; //0
+    cout<<(a>=b)<<endl; //1
+    cout<<(a<=b)<<endl;//0
+    cout<<(a==b)<<endl; //0
+    cout<<(a!=b)<<endl; //1
+
+   
+    return 0;
+}
+4.logical op-
+#include <iostream>
+using namespace std;
+int main()
+{
+    //logical opertors.
+    bool cond1=(10>=4);//1-true
+    bool cond2=true;
+    bool cond3=1;
+
+    if(cond1 && cond2 && cond3)
+    {
+        cout<<"ALL CONDITIONS ARE TRUE"<<endl;
+    }
+    else{
+         cout<<"ALL CONDITIONS ARE  not TRUE";
+    }
+    
+
+
+
+
+bool cond4=(10<=4);//1-true
+    bool cond5=0;
+    bool cond6=0;
+    if(cond4 || cond5 || cond6)// or logical
+    {
+        cout<<"AT LEAST ONE  CONDITIONS ARE TRUE"<<endl;
+    }
+    else{
+         cout<<"ALL CONDITIONS ARE  not TRUE"<<endl;
+    }
+    bool cond8=(5!=7);//-true
+    cout<<cond8<<endl;//1
+    cout<<!cond8<<endl;//0
+    return 0;
+}
+4.Assignment opertors-
+#include <iostream>
+using namespace std;
+int main()
+{
+    //assignment opertors.
+    int arr=5;
+    cout<<arr<<endl;//5
+
+    // arr=arr+10;
+    arr+=10;
+    cout<<arr<<endl;//15
+     
+    // arr=arr*10;
+    arr*=10;
+    cout<<arr<<endl;//150
+
+    return 0;
+}
+5.bitwise operators 
+#include <iostream>
+using namespace std;
+int main()
+{
+    //bitwise  opertors.
+    cout<<(5&4)<<endl;//4
+    cout<<(5|4)<<endl;//5
+    cout<<(~1)<<endl;//-2
+    cout<<(~5)<<endl;//-6
+    cout<<(~5)<<endl;//-6
+    cout<<(5<<1)<<endl;//10
+    cout<<(5<<2)<<endl;//20
+
+    cout<<" right shift -div by 2"<<endl;
+    cout<<(1>>1)<<endl;//-6
+    cout<<(100>>1)<<endl;//50
+    cout<<(100>>2)<<endl;//25
+    cout<<(100>>3)<<endl;//12
+
+    cout<<(5^5)<<endl;// same ha toh -0
+    cout<<(5^4)<<endl;//1
+    return 0;
+}
+-------------------------------------------------------------------------
+----------------------------FUNCTIONS IN C++------------------------------------------------------------------------------------------------------
+1. functions ex-
+#include <iostream>
+using namespace std;
+void printCounting()
+    {
+       for ( int i = 1; i < 5; i++)
+     {
+        cout<<i<<" ";
+     }
+     cout<<endl;
+    }
+    int main()
+    {
+     printCounting();
+     cout<<"\nbarrar"<<endl;
+
+     printCounting();
+     int a;
+     cin>>a;
+     cout<<"the value of a:"<<a<<endl;
+
+     printCounting();
+
+    return 0;
+}
+o/p-1 2 3 4 
+
+barrar
+1 2 3 4 
+4
+the value of a:4
+1 2 3 4
+
+2. #include <iostream>
+using namespace std;
+int sum(int a, int b)
+    {   int totalsum= a + b;
+        return totalsum;
+    }
+void printmyname();//-signature--
+void printMyName()//-no return a value 
+{cout<<"\njashan ..kumar.."<<endl;
+}
+int main()
+{
+    int ans= sum(10,5);
+    cout<<ans;
+    printMyName();
+    printmyname();
+    return 0;
+}
+void printmyname()//-no return a value 
+{
+    cout<<"\n..kumar.."<<endl;
+}
+o/p-15
+jashan ..kumar..  
+
+..kumar..
+
+3. #include <iostream>
+using namespace std;
+int getMultiplication(int x, int y,int z)
+    {   
+      int result=x*y*z;
+      return result;
+    }
+void printMyNamesTenTimes()
+{   for(int i=1;i<=10;i++)
+    {
+        cout<<"jashan here"<<" ";
+    }
+}
+void printMultiples(int num)
+{
+    for(int i=1;i<=10;i++)
+    {
+        cout<<num*i<<" ";
+    }return;// void me without return val use kar skta hai
+}
+int convertIntoCelsius(int far)
+{
+    int celsius=(far-32)*5/9;
+    return celsius;
+}
+char ConvertIntoUpperCase(char ch)
+{
+    char answer=ch-'a'+'A';
+    return answer;
+}
+int main()
+{
+     int multiplication=getMultiplication(5,4,3);// arguments 
+     cout<<multiplication<<endl;
+
+     printMyNamesTenTimes();
+     int val=5;
+     cout<<endl;
+     printMultiples(val);
+     int far=32;
+     int ans=convertIntoCelsius(far);
+     cout<<"\nin celsius:"<<ans<<endl;
+
+    char result=ConvertIntoUpperCase('e');
+    cout<<"alphabet:"<<result;
+    return 0;
+}
+o/p-60
+jashan here jashan here jashan here jashan here jashan here jashan here jashan here jashan here jashan here jashan here       
+5 10 15 20 25 30 35 40 45 50        
+in celsius:0      
+alphabet:E   
+4.homework—
+#include <iostream>
+#include<cmath>
+using namespace std;
+void printCountingOneTo100()
+{  for(int i=1;i<=100;i++)
+    {
+        cout<<i<<" ";
+    } 
+}
+
+float findSimpleInterest(int profit,int rate,int time)
+{
+   float result=(profit*rate*time)/100;
+   return result;
+}
+
+void printPrimeNumbersBtw1ToN() {
+    int n;
+    cout << "\nEnter the upper limit: ";
+    cin >> n; //  e.g., 100
+
+    cout << "The prime numbers between 1 and " << n << " are: ";
+
+    for (int num = 2; num <= n; ++num) { // Iterate through all numbers from 2 to 100
+        bool isPrime = true; 
+
+        for (int i = 2; i * i <= num; ++i) { 
+            if (num % i == 0) {
+                isPrime = false; // Not a prime number
+                break;
+            }
+        }
+
+        if (isPrime) {
+            cout << num << " "; // Print the prime number
+        }
+    }
+    cout << endl;
+}
+   
+void eligibleForVote(int age)
+{
+    if(age>=18)
+    {
+        cout<<" U ARE  ELIGIBLE FOR VOTE"<<endl;
+    }
+    else{
+        cout<<"U ARE not ELIGIBLE FOR NOT "<<endl;
+    }
+}
+
+float sipCalculator(int monthlyInvest, float annualRate, int months) {
+    float monthlyRate = annualRate / (12 * 100); 
+    float futureValue = monthlyInvest * (pow(1 + monthlyRate, months) - 1) / monthlyRate * (1 + monthlyRate);
+    return futureValue;
+}
+
+int main()
+{
+    printCountingOneTo100();
+
+    int profit,rate,time;
+    cout<<"\n\nenter the val of profit---";
+    cin>>profit;
+    cout<<"enter the val of rate---";
+    cin>>rate;
+    cout<<"enter the val of time--";
+    cin>>time;
+
+    float res=findSimpleInterest(profit,rate,time);
+    cout<<"THE RESULT OF SI-"<<res<<endl;
+
+    printPrimeNumbersBtw1ToN(); // Call the function
+
+    int age;
+    cout<<"\nenter the val of age--";
+    cin>>age;
+    eligibleForVote(age);
+    
+    int monthlyInvest, months;
+    float annualRate;
+
+    cout << "Enter the monthly investment amount: ";
+    cin >> monthlyInvest;
+    cout << "Enter the annual interest rate (in %): ";
+    cin >> annualRate;
+    cout << "Enter the number of months: ";
+    cin >> months;
+
+    // Calculate and display the SIP future value
+    float futureValue = sipCalculator(monthlyInvest, annualRate, months);
+    cout << "Future Value of SIP: " << futureValue << endl;
+   
+
+    return 0;
+}
+
+-------------------------------------------------------------------------
+-------------------------------TYPE CASTING in C++------------------------------------------------------------------------------------------------
+1.implict conversion 
+#include <iostream>
+using namespace std;
+
+    int main()
+    {
+     //-IMPLICT TYPECASTING
+     // 1.-INT TO FLOAT 
+     int num1=10;
+     float num2=5.5;
+
+     float  result=num1+num2;
+     cout<<"the sum of IMPLICT FUN-"<<result<<endl;
+     //implict conversion of num1 from int to float
+     
+     //  2..char to int 
+     char ch='A';
+     int a=ch+1;// implict conversion  from char to int
+     char b=ch+1;// chsr to char
+     cout<<b<<"-- ";
+     cout<<a<<endl;
+    
+    //3. int to char
+    int c=97;
+    char cha=c;//implict conversion  from int to char
+    cout<<cha<<endl;
+
+    char g='g';
+    int gg=g;
+    cout<<gg<<endl;
+    return 0;
+}
+o/p-the sum of IMPLICT FUN-15.5
+B-- 66
+a
+103
+2.explict conversion
+#include <iostream>
+using namespace std;
+
+    int main()
+    {
+     //-EXPLICT TYPECASTING
+     // 1.- DOUBLE TO INT 
+     double pi=3.14558428;
+     int pie=(int)pi;
+
+     //explict conversion of pie from double to int
+     cout<<" EMPLICT FUN-"<<pie<<endl;
+     
+     //  2.float to char
+     float floatNumber=65.35;
+     char charValue=(char)floatNumber;
+     //explict conversion of floatNumber from float into char
+     cout<<"float to char--"<<charValue<<endl;
+
+     //3.int to float
+     int a=10;
+     int b=3.0;
+
+     float c=((float)a)/b;
+     float d=a/(float)b;
+    // explict conversion from int to char
+     cout<<c<<endl;
+     cout<<d<<endl;
+      return 0;
+}
+o/p-EMPLICT FUN-3
+float to char--A
+3.33333
+3.33333
+-------------------------------------------------------------------------
+---------------------DECIMAL ABD BINARY UMBER SYSYTEM---------------------------------------------------------------------------------------------1. DECIMAL TO BINARY-
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+   int decimalTOBinaryMethod1(int n)
+   {
+    //division method
+    int binaryNo=0;
+    int i=0;
+    while(n>0)
+    {   
+        int bit=n%2;
+        binaryNo=bit*pow(10,i++)+binaryNo;
+        n=n/2;
+    }
+     return binaryNo;
+   }
+   int decimalTOBinaryMethod2(int n)
+   {
+    //BITWISE  method
+    int binaryNo=0;
+    int i=0;
+    while(n>0)
+    {   
+        int bit=(n&1);
+        binaryNo=bit*pow(10,i++)+binaryNo;
+        n=n>>1;
+    }
+     return binaryNo;
+   }
+
+    int main()
+    {
+     int n;
+     cin>>n;
+     int binary=decimalTOBinaryMethod1(n);
+     cout<<" decimal method--"<<binary<<endl;
+
+      int bin=decimalTOBinaryMethod2(n);
+      cout<<"bitwise method--"<<bin<<endl;
+
+
+      return 0;
+}
+o/p-10
+ decimal method--1010
+bitwise method--1010
+2. 
+BINARY TO DECIMAL 
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+   
+
+
+
+int BinaryToDecimalMethod1(int n)
+   {
+    
+    int decimal=0;
+    int i=0;
+      while(n>0)
+     {
+       int bit=n%10;
+       decimal=bit*pow(2,i++)+decimal;
+        n/=10;
+      }
+      return decimal;
+   }
+   int BinaryToDecimalMethod2(int n)
+   {
+    
+    int decimal=0;
+    int i=0;
+      while(n>0)
+     {
+       int bit=n&1;
+       decimal=bit*pow(2,i++)+decimal;
+        n/=10;
+      }
+      return decimal;
+   }
+    
+   
+    int main()
+    {
+     int binaryNo;
+     cin>>binaryNo;
+     cout<<"METHOD-1:";
+     cout<<BinaryToDecimalMethod1(binaryNo)<<endl;
+     cout<<"METHOD-2:";
+     cout<<BinaryToDecimalMethod2(binaryNo)<<endl;
+
+     return 0;
+}
+
+
+
+
+
+
+
+

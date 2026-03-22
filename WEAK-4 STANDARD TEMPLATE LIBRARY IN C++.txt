@@ -1,0 +1,761 @@
+=========================================================================
+-------------------------------(DSA – SUPREME)---------------------------
+=========================================================================
+                    CODE-WEAK-3 [STANDARD TEMPLATE LIBRARY]
+-------------------------------------------------------------------------
+--------------------------------CONTAINEERS IN C++------------------------------------------------------------------------------------------------
+
+1.                                VECTOR
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    // creation of vector
+    vector<int> marks;
+    vector<int> miles(10);        // -10 block create
+    vector<int> distances(15, 5); // 15-block create and 0-initialse
+    vector<int> age;
+
+    //-begin and end
+    cout << "begin-" << *(distances.begin()) << endl; // 5
+    cout << "end-" << *(distances.end() - 1) << endl; // 5
+
+    //-pushback and popback
+    marks.push_back(10);
+    marks.push_back(20);
+    marks.push_back(30);
+    marks.push_back(40);
+
+    // size
+    cout << "SIZE:-" << marks.size() << endl; // 4
+
+    //-40 will be remove
+    marks.pop_back();
+    cout << "SIZE 2:-" << marks.size() << endl; // 3
+
+    //-front and back
+    cout << "FRONT ELEMENT:-" << marks.front() << endl; // 10
+    cout << "BACK element:-" << marks.back() << endl;   // 30
+
+    //-empty
+    if (marks.empty() == true)
+    {
+        cout << "vector is empty" << endl;
+    }
+    else
+    {
+        cout << "vector is not empty" << endl;
+    }
+
+    //-operator it can access/print & modify
+    cout << "operator use-" << marks[0] << endl; // 10
+    
+    // it can be manipulation
+    marks[0] = 100;
+    cout << "VAL AT 0--" << marks[0] << endl; // 100
+
+    // it must be imp 0,1, index present ,not-erroe occur
+    // age[0] = 100;-segmentation fault occur
+
+    //-at function
+    cout << "at fun -" << marks.at(0) << endl; // 100
+
+    //-capacity
+    cout << "cap-" << marks.capacity() << endl; // 4
+    marks.push_back(50);
+    marks.push_back(60);
+    cout << "cap-" << marks.capacity() << endl; // 8
+    cout << "SIZE:-" << marks.size() << endl;   // 5
+
+    
+
+    //-reserve
+    age.reserve(10);
+    cout << "use reserve-" << age.capacity() << endl; // 10
+
+    //- max size
+    cout << "max-size--" << age.max_size() << endl; // 1073741823
+
+    // clear
+    marks.clear();                            // remove all element
+    cout << "SIZE:-" << marks.size() << endl; // 0
+
+    // insert
+    marks.push_back(10);
+    marks.push_back(20);
+    marks.push_back(30);
+
+    marks.insert(marks.begin(), 15);
+    cout << "0 loc-" << marks[0] << endl;     // 15
+    cout << "SIZE:-" << marks.size() << endl; // 4
+
+    // erase
+    marks.erase(marks.begin(), marks.end());
+    cout << "SIZE:-" << marks.size() << endl; // 0
+
+    vector<int> first;
+    vector<int> sec;
+    first.push_back(11);
+    first.push_back(12);
+    first.push_back(13);
+    sec.push_back(101);
+    sec.push_back(102);
+    sec.push_back(103);
+
+    first.swap(sec);
+    cout << "fisrt 0loc--" << first[0] << "\n"; // 101
+    cout << "fisrt 1loc--" << first[1] << "\n"; // 102
+    cout << "fisrt 2loc--" << first[2] << "\n"; // 103
+    // for each loop
+    for (int i : sec)
+    {
+        cout << i << " ";
+    }
+    //-transerve the vector using iterator
+    // create a iterator
+    vector<int>::iterator it = first.begin();
+    while (it != first.end())
+    {
+        cout << *it << " ";
+        it++;
+    }
+    return 0;
+}
+2.2-d array
+
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    //-2- D vector /array
+    vector<vector<int>> arr(5, vector<int>(4, 0));
+    int totalRows = arr.size();   // 5
+    int totalCol = arr[0].size(); // 4
+    cout << totalRows << " " << totalCol << " ";
+    // 2-d array created
+    // with 5-rows,4-col
+    // with inital val of each cell as "0"
+    
+    //-different col
+    vector<vector<int>> brr(4);
+    brr[0] = vector<int>(4);
+    brr[1] = vector<int>(2);
+    brr[2] = vector<int>(5);
+    brr[3] = vector<int>(3);
+    
+    int totalRowsCount = brr.size(); // 4
+    cout << totalRowsCount;
+    // int totalColCount=brr[i].size();
+    return 0;
+}
+3.LIST
+#include <iostream>
+#include <list>
+using namespace std;
+
+int main()
+{
+    // creation of the list
+    list<int> myList;
+
+    // insertion-pushback
+    myList.push_back(10); // 10
+    myList.push_back(20); // 10->20
+    myList.push_back(30); // 10->20->30
+    myList.push_back(40); // 10->20->30->40
+
+    myList.push_front(100); // 100->10->20->30->40
+
+    //-remove
+    myList.pop_back();  // 100->10->20->30
+    myList.pop_front(); // 10->20->30
+
+    myList.push_back(10); // 10->20->30->10
+
+    //-transverse through iterator
+    list<int>::iterator it = myList.begin();
+
+    cout << "before transversing:-";
+    while (it != myList.end())
+    {
+        cout << *it << " ";
+        it++;
+    } // 10->20->30->10
+
+    //-remove -10 all
+    myList.remove(10);
+
+    list<int>::iterator it2 = myList.begin();
+
+    cout << "\nafter transversing:-";
+    while (it2 != myList.end())
+    {
+        cout << *it2 << " ";
+        it2++;
+    } // 20->30
+
+    // SIZE
+    cout << "\nsize of list--" << myList.size() << endl; // 2
+
+    // front-back
+    cout << "Front elemnt list--" << myList.front() << endl; // 20
+    cout << "End element lisT--" << myList.back() << endl;   // 30
+
+    // clear
+    myList.clear();
+    cout << "size of list after CLEAR--" << myList.size() << endl; // 0
+
+    // empty
+    if (myList.empty() == true)
+    {
+        cout << "LIST IS EMPTY" << endl;
+    }
+    else
+    {
+        cout << "List is not Empty" << endl;
+    }
+
+    // swapping
+    list<int> first;
+    first.push_back(10);
+    first.push_back(20);
+    first.push_back(30);
+    first.push_back(40); // 10->20->30->40
+
+    list<int> sec;
+    sec.push_back(101);
+    sec.push_back(202);
+    sec.push_back(303);
+    sec.push_back(404); // 101->202->303->404
+
+    list<int>::iterator it3 = first.begin();
+
+    cout << "before swapping:";
+    while (it3 != first.end())
+    {
+        cout << *it3 << " ";
+        it3++;
+    }
+
+    first.swap(sec);
+
+    list<int>::iterator it4 = first.begin();
+
+    cout << "\nafter swapping:";
+    while (it4 != first.end())
+    {
+        cout << *it4 << " ";
+        it4++;
+    }
+
+    // insert
+    first.insert(first.begin(), 100); // 100->101->202->303->404
+
+    list<int>::iterator it5 = first.begin();
+    cout << "\nafter inserting:";
+    while (it5 != first.end())
+    {
+        cout << *it5 << " ";
+        it5++;
+    }
+
+    // ERASE
+    first.erase(first.begin(), first.end());
+    cout << "size of list AFTER EARSE-" << first.size() << endl; // 0
+
+    return 0;
+}
+4.QUEUE
+#include <iostream>
+#include <queue>
+using namespace std;
+
+int main()
+{
+    // creation of the queue
+    queue<int> q;
+
+    // insertion-push -last me add hota hai
+    q.push(10); // 10
+    q.push(20); // 10,20
+    q.push(30); // 10,20,30
+    q.push(40); // 10,20,30,40
+
+    // size
+    cout << "Size of Queue-" << q.size() << endl; // 4
+
+    // deletion-pop-remove start sa hota hai
+    q.pop();                                            // 20,30,40
+    cout << "size of q after pop-" << q.size() << endl; // 3
+
+    // front and rear
+    cout << "Front element in q-" << q.front() << endl; // 20
+    cout << "REAR element in q--" << q.back() << endl;  // 40
+
+    //-empty
+    if (q.empty() == true)
+    {
+        cout << "q is empty";
+    }
+    else
+    {
+        cout << "q is not empty";
+    }
+
+    // swapping
+    queue<int> first;
+    first.push(10);
+    first.push(20);
+    first.push(30); // 10,20,30
+
+    queue<int> second;
+    second.push(100);
+    second.push(200);
+    second.push(300); // 100,200,300
+
+    first.swap(second);
+
+    cout << "\nswapping meth- fisrt q: ";
+    cout << first.front() << " " << first.back() << endl; // 300
+
+    cout << "swapping meth- second q: ";
+    cout << second.front() << " " << second.back() << endl; // 30
+
+    return 0;
+}
+5.stack
+#include <iostream>
+#include <Stack>
+
+using namespace std;
+int main()
+{
+    // creation of the stack
+    stack<int> st;
+    st.push(10);
+    st.push(20);
+    st.push(30);
+    st.push(40);
+
+    // size
+    cout << "Size of the stack-" << st.size() << endl; // 4
+
+    // remove
+    st.pop();
+    cout << "Size after pop-" << st.size() << endl; // 3
+
+    // see the top ele
+    cout << "top element in stack-" << st.top() << endl; // 30
+    cout << "Size after top-" << st.size() << endl;      // 3
+
+    // empty
+    if (st.empty() == true)
+    {
+        cout << "st is empty" << endl;
+    }
+    else
+    {
+        cout << "st is not empty" << endl;
+    }
+
+    // swapping
+    stack<int> sec;
+    sec.push(100);
+    sec.push(200);
+    sec.push(300);
+
+    st.swap(sec);
+
+    cout << "top element in stack-" << st.top() << endl;  // 300
+    cout << "top element in stack-" << sec.top() << endl; // 30
+
+    return 0;
+}
+6.deque
+#include <iostream>
+#include <deque>
+using namespace std;
+
+int main()
+{
+    // creation of deque
+    deque<int> dq;
+
+    dq.push_back(10); // 10
+    dq.push_back(20); // 10,20
+    dq.push_back(30); // 10,20,30
+
+    dq.push_front(100); // 100,10,20,30
+    dq.push_front(200); // 200,100,10,20,30
+    dq.push_front(300); // 300,200,100,10,20,30
+
+    dq.pop_front(); // 200,100,10,20,30
+    dq.pop_back();  // 200,100,10,20
+
+    // trasverse
+    deque<int>::iterator it = dq.begin();
+    while (it != dq.end())
+    {
+        cout << *it << " ";
+        it++;
+    }
+
+    // size
+    cout << "\nsize of deque-" << dq.size() << endl; // 4
+
+    // front and back
+    cout << "front el-" << dq.front() << endl; // 200
+    cout << "end el-" << dq.back() << endl;    // 20
+
+    // insert
+    dq.insert(dq.begin(), 500);
+    cout << "front el after insert-" << dq.front() << endl; // 500
+
+    // empty
+    if (dq.empty() == true)
+    {
+        cout << "dq is empty" << endl;
+    }
+    else
+    {
+        cout << "dq is not empty" << endl;
+    }
+
+    // opertor
+    cout << "val 0 index-" << dq[0] << endl;
+    cout << "at fun 3 index-" << dq.at(3) << endl;
+
+    // clear
+    dq.clear();
+    cout << "after clear :" << dq.size() << endl;
+
+    // swapping
+    deque<int> first;
+
+    first.push_back(10); // 10
+    first.push_back(20); // 10,20
+    first.push_back(30); // 10,20,30
+
+    deque<int> sec;
+
+    sec.push_back(100); // 100
+    sec.push_back(200); // 100,200
+    sec.push_back(300); // 100,200,300
+
+    first.swap(sec);
+
+    cout << "before swapping:";
+    deque<int>::iterator it2 = first.begin();
+    while (it2 != first.end())
+    {
+        cout << *it2 << " ";
+        it2++;
+    }
+    cout << "\nafter swapping:";
+    deque<int>::iterator it3 = first.begin();
+    while (it3 != first.end())
+    {
+        cout << *it3 << " ";
+        it3++;
+    }
+    
+    // erase
+    first.erase(first.begin(), first.end());
+    cout << "\nerase size -" << first.size() << endl;
+
+    return 0;
+}
+7.priority queue-max heap
+#include <iostream>
+#include <queue>
+using namespace std;
+int main()
+{
+    // creation of pq
+    priority_queue<int> pq;
+    // max-heap-> max val->highest pq
+
+    pq.push(10); // 10
+    pq.push(23); // 23,10
+    pq.push(50); // 50,23,10
+    pq.push(34); // 50,34,23,10
+
+    // top ele---highest pq
+    cout << "top ele-" << pq.top() << endl; // 50
+
+    // pop ele-highest pq remove pop
+    pq.pop();
+    cout << "top ele-" << pq.top() << endl; // 34
+
+    // size
+    cout << "size of pq-" << pq.size() << endl; // 3
+
+    // empty
+    if (pq.empty() == true)
+    {
+        cout << "pq is mpty" << endl;
+    }
+    else
+    {
+        cout << "pq is not empty" << endl;
+    }
+    return 0;
+}
+8.min heap
+#include <iostream>
+#include <queue>
+using namespace std;
+int main()
+{
+    // creation of pq
+    priority_queue<int, vector<int>, greater<int>> pq;
+    // min-heap-> min val->highest pq
+
+    pq.push(100); // 100
+    pq.push(23);  // 23,100
+    pq.push(50);  // 23,50,10
+    pq.push(34);  // 100,50,34,23
+
+    // top ele---highest pq-min vala
+    cout << "top ele-" << pq.top() << endl; // 23
+
+    // pop ele-(highest pq)) remove pop
+    pq.pop();
+    cout << "top ele-" << pq.top() << endl; // 34
+
+    pq.pop();
+    cout << "top ele-" << pq.top() << endl; // 50
+
+    // size
+    cout << "size of pq-" << pq.size() << endl; // 2
+    
+    //empty
+    if (pq.empty() == true)
+    {
+        cout << "pq is mpty" << endl;
+    }
+    else
+    {
+        cout << "pq is not empty" << endl;
+    }
+
+    return 0;
+}
+9.unordered-map
+#include <iostream>
+#include <map>
+#include <unordered_map>
+using namespace std;
+
+int main()
+{
+    // creation of unordered pair
+    unordered_map<string, string> table; // st-key,st-val
+
+    // insertion
+    table["in"] = "india";
+    table.insert(make_pair("en", "England"));
+
+    pair<string, string> p;
+    p.first = "br";
+    p.second = "brazil";
+    table.insert(p);
+
+    // traverse
+    cout << "traverse a map-" << endl;
+
+    unordered_map<string, string>::iterator it = table.begin();
+    while (it != table.end())
+    {
+        pair<string, string> p = *it;
+        cout << p.first << " " << p.second << endl;
+        it++;
+    }
+    cout << endl;
+    // find -imp
+    cout << "find method-";
+    if (table.find("inm") != table.end())
+    {
+        cout << "key found" << endl;
+    }
+    else
+    {
+        cout << "key  not found" << endl;
+    }
+    cout << "count method--";
+    // count-imp
+    if (table.count("in") == 0)
+    {
+        cout << "key  not found" << endl;
+    }
+    if (table.count("in") == 1)
+    {
+        cout << "key   found" << endl;
+    }
+    cout<<endl;
+    // at fun
+    cout << "at fun-" << table.at("in") << endl;
+
+    // modify
+    table.at("in") = "india2";
+    cout << "using at modify-" << table.at("br") << endl;
+
+    table["br"] = "brain";
+    cout << "using operator modify-" << table.at("in") << endl;
+
+    // size
+    cout << "size of table-" << table.size() << endl; // 3
+
+    // clear
+    table.clear();
+    cout << "size of table clear method-" << table.size() << endl; // 0
+
+    // empty
+    if (table.empty() == true)
+    {
+        cout << "table is empty" << endl;
+    }
+    else
+    {
+        cout << "table is not empty" << endl;
+    }
+    // erase method-
+    table["in"] = "india";
+    table.insert(make_pair("en", "England"));
+    cout << "size of table-before erase-" << table.size() << endl;//2
+
+    table.erase(table.begin(), table.end());
+    cout << "size of table after erase-" << table.size() << endl;//0
+
+    return 0;
+}
+
+
+
+10.ordered map
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main()
+{
+    // creation of unordered pair
+    map<string, string> table; // st-key,st-val
+
+    // insertion
+    table["in"] = "india";
+    table.insert(make_pair("en", "England"));
+
+    pair<string, string> p;
+    p.first = "br";
+    p.second = "brazil";
+    table.insert(p);
+
+    // traverse
+    cout << "traverse a map-" << endl;
+
+    map<string, string>::iterator it = table.begin();
+    while (it != table.end())
+    {
+        pair<string, string> p = *it;
+        cout << p.first << " " << p.second << endl;
+        it++;
+    }
+
+    cout << endl;
+
+    //-entry are sorted form
+
+    map<int, string> tb;
+    tb.insert(make_pair(1, "love hrm"));
+    tb.insert(make_pair(3, "love jshn"));
+    tb.insert(make_pair(2, "love harry"));
+    map<int, string>::iterator it1 = tb.begin();
+    while (it1 != tb.end())
+    {
+        pair<int, string> p1 = *it1;
+        cout << p1.first << " " << p1.second << endl;
+        it1++;
+    }
+    cout << endl;
+
+    return 0;
+}
+11.set-unordered set
+#include <iostream>
+#include <set>
+using namespace std;
+
+
+
+
+
+
+int main()
+{  // creation of the set
+    set<int> st;
+    st.insert(10);
+    st.insert(12);
+    st.insert(3);
+    st.insert(23);
+
+    // transerve
+    cout << "transerve -";
+    set<int>::iterator it = st.begin();
+    while (it != st.end())
+    {
+        cout << *it << " ";
+        it++;
+    }
+    cout << endl;
+    // find
+    cout << "find method-";
+    if (st.find(10) != st.end())
+    {
+        cout << "st me mil gaya" << endl;
+    }
+    else
+    {
+        cout << "st me nhi mila" << endl;
+    }
+    // count
+    cout << "count method-";
+    if (st.count(10) == 1)
+    {
+        cout << "found" << endl;
+    }
+    else if (st.count(15) == 0)
+    {
+        cout << " not found" << endl;
+    }
+
+    // size
+    cout << "size-" << st.size() << endl;
+
+    // clear
+    st.clear();
+    cout << "size-" << st.size() << endl;
+
+    // empty
+    if (st.empty() == true)
+    {
+        cout << "st is empty" << endl;
+    }
+    else
+    {
+        cout << "st is not empty" << endl;
+    }
+    // earse fun use similar as……….
+    return 0;
+}
+00000000000000000000000000000000000000000000000000000000000000000000000
+
+
+
+
+
+
+

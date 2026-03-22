@@ -1,0 +1,411 @@
+-------------------------------( DSA – SUPREME)-----------------------========================================================================
+                        
+                       CODE-WEAK—2 [INTRODUCTION OF C++]
+
+
+
+------------------------------------------------------------------------
+----------------------------PATTERNS ------------------------------------------------------------------------------------------------------------
+1. loops partice-
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+    int main()
+    {
+        for(int i=1;i<5;i++)
+        {
+            cout<<i<<"->";
+            for(int j=1;j<=2;j++)
+            {
+                cout<<"*";
+            }
+            cout<<endl;
+        }
+     
+
+     
+     return 0;
+}
+o/p-
+1->**
+2->**
+3->**
+4->**
+
+2.--------------------------square pattern-------------------------------
+#include <iostream>
+#include<cmath>
+using namespace std;
+    int main()
+    {    //-sq-pattern
+        //total rows-4
+        // every rows -> print 4 star
+        //-outer lop->4 rows
+        for(int row=0;row<4;row++)// outer loop-rows
+        {   //-inner loop -> 4 star print
+           //-hr row me kya krna hsai,vo inner loop batega.
+            for(int j=0;j<4;j++)// inner loop-col
+            {  
+                //hr 1 single column me,1 star rakha hai..
+                cout<<"* ";
+            }
+            //4 -star print karane ke badd, next line me aata hai 
+            cout<<endl;
+        }
+     return 0;}
+o/p-
+* * * * 
+* * * *      
+* * * *      
+* * * *
+3.---------------------rectangle,squre ------------------------------ 
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+    int main()
+    {
+        int side;
+        cout<<"enter the val of side .--";
+        cin>>side;
+        cout<<"square pattern"<<endl;
+        for(int row=0;row<side;row++)// outer loop-row
+        {   
+            for(int col=0;col<side;col++)// inner loop-col
+            {  
+                cout<<"* ";
+            } 
+            cout<<endl;
+        }
+
+        cout<<"---rectangle pattern"<<endl;
+        int length,width;
+        cout<<"enter the length.-";
+        cin>>length;
+        cout<<"enter the width.--";
+        cin>>width;
+
+        for(int r=0;r<length;r++)// outer loop
+        {
+            for(int c=0;c<width;c++)//inner loop
+            {
+                cout<<"* ";
+            }
+            cout<<endl;
+        }
+     return 0;
+}
+o/p-enter the val of side .--5
+square pattern
+* * * * *
+* * * * *
+* * * * * 
+* * * * *
+* * * * *
+---rectangle pattern
+enter the length.-2
+enter the width.--5
+* * * * *
+* * * * *
+
+4.—hollow square ,rectangle triangle 
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+    int main()
+    {  //-hollow traingle
+        int length,width;
+        cout<<"enter the length.-";
+        cin>>length;
+
+        cout<<"enter the width.--";
+        cin>>width;
+        for(int row=0;row<length;row++)
+        {//-inner 
+            for(int col=0;col<width;col++)
+            {
+                if(row == 0 || row == length-1)
+                {
+                    cout<<"* ";
+                }
+                else{
+                    if(col == 0 || col == width-1)
+                    {
+                        cout<<"* ";
+                    }
+                    else{
+                        cout<<"  ";
+                    }
+                }
+            
+            }
+            cout<<endl;
+        }
+        //-hollow square
+        int side;
+        cout<<"enter the side of square.-";
+        cin>>side;
+
+      //  1.
+        for(int row=0;row<side;row++)
+        {//-inner 
+            for(int col=0;col<side;col++)
+            {
+                if(row==0 || row==side-1)
+                {
+                    cout<<"* ";
+                }
+                else{
+                    if(col==0 || col==side-1)
+                    {
+                        cout<<"* ";
+                    }
+                    else{
+                        cout<<"  ";
+                    }
+                }
+            
+            }
+            //-ye main bhul jata hu
+            cout<<endl;
+        }
+        // 2.diagonal elements print
+        for(int r=0;r<side;r++)
+        {
+            for(int c=0;c<side;c++)
+            {
+                if(r==0||c==0||r==side-1||c==side-1||r==c)
+                {
+                    cout<<"* ";
+                }
+                else
+                {
+                    cout<<"  ";
+                }
+            
+            }
+            cout<<endl;
+        }
+     return 0;
+}
+o/p-enter the length.-4
+enter the width.--6
+* * * * * *
+*         *
+*         *
+* * * * * *
+enter the side of square.-5    
+* * * * *
+*       *
+*       *
+*       *
+* * * * *
+* * * * *
+* *     *
+*   *   * 
+*     * *
+* * * * *
+5.--------------------------------half pyramid…--------------------------
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+    int main()
+    {
+        //-half pyramid
+        int n;
+        cout<<"enter the val of n:";
+        cin>>n;
+
+        cout<<"1. half pyramid"<<endl;
+        for(int row=0;row<n;row++)
+        {
+            for(int col=0;col<row+1;col++)//-condn-col<=row
+            {
+                cout<<"* ";
+            }
+            cout<<endl;
+        }
+
+        //-inverted pyramid
+        cout<<"2.inverted pyramid"<<endl;
+        for(int row=0;row<n;row++)
+        {
+            //for(int c=5;c>r;c--)
+            for(int col=0;col<n-row;col++)
+            {
+                cout<<"* ";
+
+            }
+            cout<<endl;
+        }
+    
+        cout<<"3.hallow half pyramid."<<endl;
+        for(int row=0;row<n;row++)
+        {   int totalCol=row+1;
+            for(int col=0;col<totalCol;col++)
+            {
+                if(row==0||row==n-1||row==1)
+                {
+                    cout<<"* ";
+                }
+                else{
+                    if(col==0||col==totalCol-1)
+                    {
+                        cout<<"* ";
+                    }
+                    else{
+                        cout<<"  ";
+                    }
+                }/*
+               if(  row == 0||row==n-1||col==0||col==row)
+
+               {
+                cout<<"* ";
+               }
+               else{
+                 cout<<"  ";
+                 }
+               
+
+            }*/
+            
+        }
+        cout<<endl;
+        } 
+
+        cout<<"4.inverted pyramid"<<endl;
+        for(int row=0;row<n;row++)
+        {
+            for(int col=0;col<n-row;col++)
+            {
+                if(row==0||row==n-1)
+                {
+                  cout<<"* ";
+                }
+                else{
+                if(col==0||col==n-row-1){
+                    cout<<"* ";
+                }
+                else{
+                    cout<<"  ";
+                }
+
+                }
+            }
+            cout<<endl;
+        }
+        cout<<"5.inverted pyramid method-2"<<endl;
+        for(int row=0;row<n;row++)
+        {
+            for(int col=0;col<n-row;col++)
+            {
+                if(  row == 0||row==n-1||col==0||col+row==n-1)
+               {
+                cout<<"* ";
+               }
+               else{
+                 cout<<"  ";
+                 }
+               
+
+            }
+                cout<<endl;
+        }
+     return 0;
+}
+o/p-enter the val of n:6
+1. half pyramid
+*
+* *
+* * *
+* * * *
+* * * * *
+* * * * * * 
+2.inverted pyramid
+* * * * * *
+* * * * *
+* * * *
+* * *
+* *
+*
+3.hallow half pyramid.
+*
+* *
+*   *
+*     *
+*       *
+* * * * * *
+
+
+
+
+
+
+4.inverted pyramid
+* * * * * *
+*       * 
+*     *
+*   *
+* *
+*
+5.inverted pyramid method-2    
+* * * * * *
+*       *
+*     *
+*   *
+* *
+*
+5.----------------------Numeric inverted pyramid-------------------------
+      
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+    int main()
+    { int n;
+      cout<<"enter the val of n--";
+      cin>>n;
+      cout<<"NUMERIC  HALF PYRAMID--\n";
+        for(int row=0;row<n;row++)
+        {
+            
+            for(int col=0;col<row+1;col++)
+            {
+                cout<<(col+1)<<" ";
+            }
+            cout<<endl;
+        }
+        cout<<"NUMERIC inverted HALF PYRAMID--\n";
+        for(int row=0;row<n;row++)
+        {
+            
+            for(int col=0;col<n-row;col++)
+            {
+                cout<<(col+1)<<" ";
+            }
+            cout<<endl;
+        }
+    
+     return 0;
+}
+o/p-enter the val of n--4
+NUMERIC  HALF PYRAMID--        
+1
+1 2
+1 2 3
+1 2 3 4
+
+
+
+
+
+NUMERIC inverted HALF PYRAMID--
+1 2 3 4
+1 2 3
+1 2
+1
+6.---------------------------FULL PYRAMID----------------------
+
